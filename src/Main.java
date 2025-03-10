@@ -1,24 +1,19 @@
-import java.util.ArrayList;
-import java.util.Scanner;
+
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        Money a = new Money(10, 0);
-        Money b = new Money(3, 50);
+        Set<String> names = new HashSet<>();
+        names.add("First");
+        names.add("Second");
+        names.add("Second");
 
-        Money c = a.minus(b);
+        System.out.println(returnSize(names));
+    }
 
-        System.out.println(a);  // 10.00e
-        System.out.println(b);  // 3.50e
-        System.out.println(c);  // 6.50e
-
-        c = c.minus(a);       // NB: a new Money object is created, and is placed "at the end of the strand connected to c"
-//  the old 6.5 euros at the end of the strand disappears and the Java garbage collector takes care of it
-
-
-        System.out.println(a);  // 10.00e
-        System.out.println(b);  // 3.50e
-        System.out.println(c);  // 0.00e
+    public static int returnSize(Set<String> names){
+        return names.size();
 
     }
 }
+
